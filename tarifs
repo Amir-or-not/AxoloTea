@@ -1,0 +1,62 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.tariff-buttons button');
+    const tariffCards = document.querySelectorAll('.tariff-card');
+    
+    // Данные о тарифах
+    const tariffData = {
+        "Неделя": {
+            "Basic": { oldPrice: "3 900 тг.", newPrice: "2 900 тг.", text: "В неделю за 1 сайт" },
+            "Expert": { oldPrice: "4 900 тг.", newPrice: "3 900 тг.", text: "В неделю за 1 сайт" },
+            "Enterprise": { oldPrice: "6 900 тг.", newPrice: "5 900 тг.", text: "В неделю за 1 сайт" }
+        },
+        "Месяц": {
+            "Basic": { oldPrice: "29 900 тг.", newPrice: "24 900 тг.", text: "В месяц за 1 сайт" },
+            "Expert": { oldPrice: "39 900 тг.", newPrice: "35 900 тг.", text: "В месяц за 1 сайт" },
+            "Enterprise": { oldPrice: "79 900 тг.", newPrice: "60 900 тг.", text: "В месяц за 1 сайт" }
+        },
+        "3 месяца": {
+            "Basic": { oldPrice: "39 900 тг.", newPrice: "26 900 тг.", text: "За 3 месяца за 1 сайт" },
+            "Expert": { oldPrice: "49 900 тг.", newPrice: "34 900 тг.", text: "За 3 месяца за 1 сайт" },
+            "Enterprise": { oldPrice: "89 900 тг.", newPrice: "59 900 тг.", text: "За 3 месяца за 1 сайт" }
+        },
+        "6 месяцев": {
+            "Basic": { oldPrice: "69 900 тг.", newPrice: "49 900 тг.", text: "За 6 месяцев за 1 сайт" },
+            "Expert": { oldPrice: "79 900 тг.", newPrice: "64 900 тг.", text: "За 6 месяцев за 1 сайт" },
+            "Enterprise": { oldPrice: "129 900 тг.", newPrice: "109 900 тг.", text: "За 6 месяцев за 1 сайт" }
+        },
+        "Год": {
+            "Basic": { oldPrice: "109 900 тг.", newPrice: "89 900 тг.", text: "В год за 1 сайт" },
+            "Expert": { oldPrice: "139 900 тг.", newPrice: "119 900 тг.", text: "В год за 1 сайт" },
+            "Enterprise": { oldPrice: "249 900 тг.", newPrice: "199 900 тг.", text: "В год за 1 сайт" }
+        }
+    };
+    
+    // Функция обновления тарифов
+    function updateTariffs(period) {
+        tariffCards.forEach(card => {
+            const name = card.querySelector('.tariff-content h2').textContent.trim();
+            const oldPriceEl = card.querySelector('.old-price');
+            const newPriceEl = card.querySelector('.new-price');
+            const subTextEl = card.querySelector('.sub-text');
+
+            if (tariffData[period] && tariffData[period][name]) {
+                oldPriceEl.textContent = tariffData[period][name].oldPrice;
+                newPriceEl.textContent = tariffData[period][name].newPrice;
+                subTextEl.textContent = tariffData[period][name].text;
+            }
+        });
+    }
+
+    // Обработчик нажатия на кнопки
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            updateTariffs(button.textContent.trim());
+        });
+    });
+
+    // Установка начального состояния
+    updateTariffs("Месяц");
+});

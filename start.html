@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxoloTea - Анализ продаж</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.0/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/FBXLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/FBXLoader.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#">Главная</a>
+                <a href="#">Аккаунты</a>
+                <a href="html.html">Пасхалочка</a>
+                <a href="#" class="navbtn">Заказать отчёт</a>
+            </nav>
+            <div class="logo">
+                <img src="images/ca.png" alt="heck">
+                <h1>AxoloTea™</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Следите за акциями компании <span class="beheard">BeHeard</span></h1>
+                <p>при помощи платформы AxoloTea™</p>
+                
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                    <div class="chart-text">
+                        <h3>Анализ продаж</h3>
+                        <p>Этот график показывает динамику роста продаж акций компании за последние шесть месяцев. Выводы делайте сами.</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="btne">Подключить аналитику</a>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container">
+                <h2>Изучайте продажи конкурентов, следите за трендами, подбирайте для себя нишу</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h3>Трекер продаж конкурентов</h3>
+                        <p class = 'simpletext'>Отслеживайте, какие товары продают ваши конкуренты и какие из них самые популярные.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Следите за трендами и нишами</h3>
+                        <p class = 'simpletext'>Анализируйте динамику продаж и находите перспективные ниши.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Изучайте нишу и категории</h3>
+                        <p class = 'simpletext'>Выбирайте товары с высоким спросом и низкой конкуренцией.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Изучайте нишу и категории</h3>
+                        <p class = 'simpletext'>Выбирайте товары с высоким спросом и низкой конкуренцией.</p>
+                    </div>
+                    <div><img src="images/bucket.png" alt="b" class = "buck"></div>
+                </div>
+            </div>
+        </section>
+        <div class="ccontainer">
+            <h3 class = 'scrollh'>AxoloTea - это новый уровень бизнес-аналитики</h3>
+            <div class="butcont">
+                <button id = "prevBtn" class="prevBtn">←</button>
+                <button id = "nextBtn" class="nextBtn">→</button>
+            </div>
+            <div class="scroll-wrapper">
+                <div class="cards">
+                    <div class="card">
+                        <p>Показываем продажи по датам</p>
+                        <a href="#" class="more-btn">Подробнее ⇧</a>
+                    </div>
+                    <div class="card">
+                        <p>Следим за новыми поступлениями и Sold out</p>
+                        <a href="#" class="more-btn">Подробнее ⇧</a>
+                    </div>
+                    <div class="card">
+                        <p>Анализируем по брендам или продавцам</p>
+                        <a href="#" class="more-btn">Подробнее ⇧</a>
+                    </div>
+                    <div class="card">
+                        <p>Изучаем динамику продаж</p>
+                        <a href="#" class="more-btn">Подробнее ⇧</a>
+                    </div>
+                    <div class="card">
+                        <p>Цены</p>
+                        <a href="#" class="more-btn">Подробнее ⇧</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>    
+        <div>
+            <div class = 'grafik'>
+                <h3 class = "inverse">Как это работает</h3>
+                <div class = 'g'>
+                    <div class = "graf"><img src="images/grrb.png" alt="graf"></div>
+                    <div class = 'circle1'>
+                        <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/4558/4558179.png" alt="poisk" class="poisk">
+                            <p class = 'pipo'>Мы ищем</p>
+                        </div>
+                    </div>
+                    <div class = 'circle2'>
+                        <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/4558/4558087.png" alt="list" class="list">
+                            <p class = 'pipo'>Мы документируем</p>
+                        </div>
+                    </div>
+                    <div class = 'circle3'>
+                        <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/4558/4558119.png" alt="stat" class="stat">
+                            <p class = 'pipo'>Мы подаем готовое</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <section class="hero ser absovniz">
+                <h1>Для кого подойдет <span class="beheard ser">AxoloTea</span></h1>
+            </section>
+            <section class="features">
+                <div class="feature-list">
+                    <div class="feature">
+                        <img src="images/ana.png" alt="Head of Ecommerce" class="feature-icon">
+                        <h3>Head of ecommerce / CMO</h3>
+                        <p>Получать регулярную информацию о деятельности конкурентов. Отчет поможет эффективней планировать свои маркетинговые мероприятия, быть в курсе активности конкурентов, следить за тем, в какие направления инвестируют игроки.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="images/bis.png" alt="Собственник бизнеса" class="feature-icon">
+                        <h3>Собственник бизнеса</h3>
+                        <p>Получить независимый взгляд на свой бизнес. Отчет поможет сравнить показатели и динамику развития своего бизнеса с бизнесом конкурентов, оценить качество работы отделов.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="images/bis.png" alt="Руководитель агентства" class="feature-icon">
+                        <h3>Руководителю рекламного агентства</h3>
+                        <p>Провести детальный конкурентный анализ при планировании стратегий продвижения для своих клиентов. Отчет поможет сформировать идеи для позиционирования и отстройки от конкурентов, в том числе и в медийных и перфоманс кампаниях.</p>
+                    </div>
+                </div>
+                <div class="feature-list">
+                    <div class="feature">
+                        <img src="https://cdn-icons-png.freepik.com/256/18449/18449719.png?ga=GA1.1.1235425150.1739728685&semt=ais_hybrid" alt="Руководитель на новом месте" class="feature-icon">
+                        <h3>Руководителю на новом месте работы</h3>
+                        <p>Увидеть объективную картину работы бизнеса. Отчет поможет сформировать вектор развития, расставить приоритеты, понять свои сильные стороны и выявить моменты, которые лучше работают у конкурентов.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="https://cdn-icons-png.freepik.com/256/5065/5065175.png?ga=GA1.1.1235425150.1739728685&semt=ais_hybrid" alt="Предприниматель" class="feature-icon">
+                        <h3>Предпринимателю при запуске бизнеса</h3>
+                        <p>Выявить основных игроков и понять расстановку сил на рынке. Отчет поможет разобраться, какие инструменты, каналы и технологии используют конкуренты, сформировать бенчмарки и определить цели.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="containerg">
+            <div class="tariff-header">
+                <h1>Наши тарифы</h1>
+                <div class="tariff-buttons">
+                    <button>Неделя</button>
+                    <button class="active">Месяц</button>
+                    <button>3 месяца <span class="discount">-20%</span></button>
+                    <button>6 месяцев <span class="discount">-30%</span></button>
+                    <button>Год <span class="discount">-40%</span></button>
+                </div>
+            </div>            
+            <div class="discount-banner">&#x25; До 31.12.2020 стоимость всех тарифов снижена на -25%</div>
+            <div class="tariff-cards">
+                <div class="tariff-card">
+                    <div class="tariff">
+                        <span class="badge w">Обычный</span>
+                        <div class="tariff-content">
+                            <h2>Basic</h2>
+                            <div class="price">
+                                <span class="old-price">29 900 тг.</span>
+                                <span class="new-price">24 900 тг.</span>
+                            </div>
+                        </div>
+                        <p class="sub-text">В МЕСЯЦ ЗА 1 САЙТ</p>
+                    </div>                     
+                    <ul>
+                        <li><span class="text">Данные доступны за неделю</span> <span class="question">❔</span></li>
+                        <li><span class="text">Аналитика</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <div class = uh><uh>Площадок, категорий, брендов, продавцов, товаров</uh></div>
+                        <li><span class="text">Новинки</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Sold out</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Листинг</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Рейтинги и отзывы</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Поиск</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Акции</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Важная информаци</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Периодная статистика</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                    </ul>
+                    
+                    <button class="btn bass">Начать прямо сейчас</button>
+                </div>
+                <div class="tariff-card expert">
+                    <div class="tariff">
+                        <span class="badge">РЕКОМЕНДУЕМЫЙ</span>
+                        <div class="tariff-content">
+                            <h2>Enterprise</h2>
+                            <div class="price">
+                                <span class="old-price">39 900 тг.</span>
+                                <span class="new-price">35 900 тг.</span>
+                            </div>
+                        </div>
+                        <p class="sub-text">В МЕСЯЦ ЗА 1 САЙТ</p>
+                    </div>  
+                    <ul>
+                        <li><span class="text">Данные доступны за месяц</span> <span class="question">❔</span></li>
+                        <li><span class="text">Аналитика</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <div class = uh><uh>Площадок, категорий, брендов, продавцов, товаров</uh></div>
+                        <li><span class="text">Новинки</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Sold out</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Листинг</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Рейтинги и отзывы</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Поиск</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Акции</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                        <li><span class="text">Важная информаци</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Периодная статистика</span> <span class="question">❔</span> <span class="line"></span> <span class="crossmark">&#10008;</span></li>
+                    </ul>
+                    <button class="btn">Начать прямо сейчас</button>
+                </div>
+                <div class="tariff-card enterprise">
+                    <div class="tariff">
+                        <span class="badge">Лучший</span>
+                        <div class="tariff-content">
+                            <h2>Enterprise</h2>
+                            <div class="price">
+                                <span class="old-price">79 900 тг.</span>
+                                <span class="new-price">60 900 тг.</span>
+                            </div>
+                        </div>
+                        <p class="sub-text">В МЕСЯЦ ЗА 1 САЙТ</p>
+                    </div>                                  
+                    <ul>
+                        <li><span class="text">Данные доступны за все время</span> <span class="question">❔</span></li>
+                        <li><span class="text">Аналитика</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <div class = uh><uh>Площадок, категорий, брендов, продавцов, товаров</uh></div>
+                        <li><span class="text">Новинки</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Sold out</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Листинг</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Рейтинги и отзывы</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Поиск</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Акции</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Важная информаци</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                        <li><span class="text">Периодная статистика</span> <span class="question">❔</span> <span class="line"></span> <span class="checkmark">&#10004;</span></li>
+                    </ul>
+                    <button class="btn disabled">Скоро будет доступен</button>
+                </div>
+            </div>
+            <div class="mininad">
+                Остались вопросы? <span class="icon">▶</span> 
+                <a href="#">Посмотрите видео</a> с подробной демонстрацией возможностей платформы AxoloTea™
+            </div>            
+            <div class="containerd">
+                <div id="scene-container1"></div>
+                <script src="axo1.js"></script>
+                <h1 class = 'd'>Почему с нами удобно</h1>
+                <div class="featured">
+                    <img src="images/doc.png" alt="Отчеты">
+                    <p class="feature-textd"><b>Смотрите отчеты</b> на нашей платформе, <b>экспортируйте в свою систему</b> аналитику или получайте данные по API</p>
+                </div>
+                <div class="featured">
+                    <img src="images/opl.png" alt="Оплата">
+                    <p class="feature-textd"><b>Удобная оплата на сайте.</b> Или счет для юр.лиц или ИП. Закрывающие документы автоматически появляются в личном кабинете</p>
+                </div>
+                <div class="featured">
+                    <img src="images/udob.png" alt="Кастомный отчет">
+                    <p class="feature-textd">Не нашли нужный вам отчет или маркетплейс? По запросу построим <b>кастомный отчет</b> в любом удобном вам виде</p>
+                </div>
+                <div id="scene-container2"></div>
+                <script src="axo2.js"></script> 
+            </div>
+            <div class="faq-container">
+                <h2 class = 'faqh'>Ответы на ваши вопросы</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Откуда вы знаете продажи акций компаний? <span class="icon">▼</span></div>
+                    <div class="faq-answer">Мы используем API различных сервисов и партнерские программы для получения данных.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Какие данные и отчеты доступны в платформе AxoloTea? <span class="icon">▼</span></div>
+                    <div class="faq-answer">Доступны отчеты по продажам акций, аналитике и трендам.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Как часто обновляются данные? <span class="icon">▼</span></div>
+                    <div class="faq-answer">Данные обновляются ежедневно.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Почему так мало вопросов? <span class="icon">▼</span></div>
+                    <div class="faq-answer">Потому что работа с нами интуитивно понятна.</div>
+                </div>
+            </div>
+            <div class = 'visitcontainer'>
+                <div class="visit">
+                    <h1 class = "vistext">Остались вопросы? Задайте в Telegram канале ›</h1>
+                    <img src="images/tg.png" alt="tgshka" class="tgshka">
+                </div>
+            </div>
+            <div class="demo-container">
+                <div class="demo-text">
+                    <h2>Лучше один раз увидеть</h2>
+                    <p>Дадим вам демо-доступ в личный кабинет.<br>Посмотрите как все работает!</p>
+                    <button class="demo-button">Получить демо-доступ</button>
+                </div>
+                <div class="demo-image">
+                    <img src="bucket.png" alt="Демо-доступ">
+                </div>
+            </div>
+            <div class="subscribe-container">
+                <p class="subscribe-text">
+                    Хочешь получать советы по анализу конкурентов? Раз в месяц, без спама
+                </p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Введите ваш e-mail ...">
+                    <button class="subscribe-button">Подписаться</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <p class="footer-title">Свяжитесь с нами</p>
+                <p>Если у вас остались вопросы или хотите обсудить сотрудничество, пишите:</p>
+                <a href="mailto:hello@AxoloTea™.com" class="footer-link">hello@AxoloTea.com</a>
+                <a href="https://AxoloTea™.com" class="footer-link">AxoloTea.com</a>
+            </div>
+            <div class="footer-column">
+                <ul class="footer-links">
+                    <li><a href="#">Маркетплейсы</a></li>
+                    <li><a href="#">Парсинг</a></li>
+                    <li><a href="#">Конкуренты</a></li>
+                    <li><a href="#">Главная</a></li>
+                </ul>
+            </div>
+            <div class="footer-column social-media">
+                <p class="footer-title">Следите за нами в соц. сетях</p>
+                <div class="social-icons">
+                    <a href="#"><img src="images/tg.png" alt="Telegram" class="socicon"></a>
+                    <a href="#"><img src="images/fb.png" alt="Facebook" class="socicon"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="nadpis">© 2019-2025 AxoloTea™. Все права защищены</p>
+            <a href="#">Лицензионное соглашение</a>
+            <a href="#" class = 'pravo'>Политика конфиденциальности</a>
+        </div>
+    </footer>
+    <script src="chart.js"></script>
+    <script src="tarifs.js"></script>
+    <script src="script.js"></script>
+    <script src="faq.js"></script>
+</body>
+</html>
