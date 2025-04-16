@@ -654,9 +654,10 @@ ul li .crossmark {
 }
 .demo-container {
     position: relative;
-    right: 135px;
     top: 300px;
-    width: 100vw;
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
     height: 500px;
     display: flex;
     align-items: center;
@@ -707,8 +708,9 @@ ul li .crossmark {
 .subscribe-container {
     position: relative;
     top: 300px;
-    right: 135px;
-    width: 100vw;
+    width: 100%;
+    max-width: 1420px;
+    margin: 0 auto;
     height: 130px;
     display: flex;
     align-items: center;
