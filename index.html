@@ -366,5 +366,26 @@
     <script src="tarifs.js"></script>
     <script src="script.js"></script>
     <script src="faq.js"></script>
+    <script>
+    window.onload = function () {
+      const warning = document.createElement("div");
+      warning.innerText = "Страница еще не адаптивна, если элементы на странице отображаются некорректно, пожалуйста попробуйте изменить масштаб (одновременно нажмите Ctrl и + или Ctrl и -)";
+      warning.style.position = "fixed";
+      warning.style.top = "0";
+      warning.style.left = "0";
+      warning.style.right = "0";
+      warning.style.padding = "20px";
+      warning.style.backgroundColor = "#f6f6f6";
+      warning.style.color = "gray";
+      warning.style.textAlign = "center";
+      warning.style.fontSize = "20px";
+      warning.style.zIndex = "9999";
+      warning.style.boxShadow = "0 2px 6px rgba(0, 0, 0, 0.2)";
+      document.body.appendChild(warning);
+      setTimeout(() => {
+        warning.remove();
+      }, 11000);
+    };
+  </script>
 </body>
 </html>
