@@ -664,6 +664,7 @@ ul li .crossmark {
     justify-content: space-between;
     background-color: #dceef1; 
     padding: 20px 40px;
+    box-sizing: border-box;
 }
 
 .demo-text {
@@ -718,6 +719,7 @@ ul li .crossmark {
     background-color: #74c1e8; 
     padding: 15px 30px;
     color: white;
+    box-sizing: border-box;
 }
 
 .subscribe-text {
