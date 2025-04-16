@@ -656,6 +656,7 @@ ul li .crossmark {
     position: relative;
     right: 135px;
     top: 300px;
+    margin: 300px auto 0 auto;
     width: 1420px;
     height: 500px;
     display: flex;
@@ -709,6 +710,7 @@ ul li .crossmark {
     top: 300px;
     right: 135px;
     width: 1420px;
+    margin: 30px auto 0 auto;
     height: 130px;
     display: flex;
     align-items: center;
